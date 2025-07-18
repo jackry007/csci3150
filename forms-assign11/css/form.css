@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+#wrapper {
+  width: 60%;
+  margin-left: 4%;
+}
+
+div#formcol1 {
+  float: left;
+  width: 100%;
+}
+
+#formcol1 li {
+  list-style: none;
+}
+
+label {
+  margin-right: 0.3em;
+  width: 6.3em;
+  display: inline-block;
+  text-align: right;
+}
+
+#formcol1 input.reqfield {
+  background: #ff9;
+}
+
+select:focus,
+input:focus,
+input:focus + label,
+label[for]:focus {
+  background-color: #e0f0ff !important; 
+  color: #000 !important;
+}
+
+fieldset {
+  margin-bottom: 1.5em;
+  padding: 1em;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+}
+
+.submit-button {
+  margin-top: 1em;
+}
