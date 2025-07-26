@@ -1,0 +1,271 @@
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f4f9fb;
+  color: #000;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 100;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Header */
+/* Header layout */
+.site-header {
+  background-color: #e6f0f5;
+  border-bottom: 1px solid #ccc;
+  font-family: Arial, sans-serif;
+}
+
+/* Top utility nav */
+.utility-bar {
+  padding: 0.5rem 2rem;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 0; /* ensures no extra spacing below */
+}
+
+.utility-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  margin-top: 0; /* removes any top margin */
+  padding-top: 0.5rem; /* optional: reduce vertical space if needed */
+}
+
+.utility-nav a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Main nav with logo */
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo-heading-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  height: 70px;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  border-left: 2px solid #000;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Filters */
+.filters {
+  width: 260px;
+  background: white;
+  padding: 1.5rem;
+  border: none;
+}
+.filters fieldset {
+  border: none;
+  margin-bottom: 1.5rem;
+}
+.filters legend {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.25rem;
+}
+.filters label,
+.filters select,
+.filters input[type="text"] {
+  display: block;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+.filters input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+.filters button {
+  background-color: #7a3e36;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Events */
+.events {
+  flex: 1;
+}
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.event-card {
+  display: flex;
+  background-color: #e0edf4;
+  border: 1px solid #ccc;
+  transition: background-color 0.3s ease;
+}
+.event-date {
+  background-color: #fff;
+  text-align: center;
+  padding: 1rem 0.75rem;
+  border-right: 1px solid #ccc;
+  min-width: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #333;
+}
+.event-date span {
+  margin: 2px 0;
+}
+.event-info {
+  flex: 1;
+  padding: 1rem;
+  background-color: #e0edf4;
+  transition: background-color 0.3s ease;
+}
+.event-card:hover .event-info {
+  background-color: #b7d1e0;
+}
+.event-info h3 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+}
+.event-info div {
+  font-size: 0.85rem;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+.pagination a {
+  text-decoration: none;
+  color: #000;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+}
+.pagination a.active {
+  background: #000;
+  color: #fff;
+}
+
+/* Footer */
+.site-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.footer-top {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 1rem;
+}
+
+.footer-bottom {
+  font-size: 0.9rem;
+}
+.footer-top > div {
+  flex: 1;
+  padding: 1rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+.social-icons a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.page-header {
+  background-color: #e6f0f5;
+  padding: 2rem 2rem 1rem;
+}
+
+.page-heading .breadcrumb {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.25rem;
+}
+
+.page-heading h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Focus indicators for accessibility */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid #005fcc; /* Strong blue outline */
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Optional: Add hover styles too for consistency */
+a:hover,
+button:hover {
+  outline: none;
+  text-decoration: underline;
+}
+

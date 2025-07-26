@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>City of Boulder Events</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <!-- Utility Bar -->
+      <div class="utility-bar">
+        <nav class="utility-nav" aria-label="Utility Navigation">
+          <ul>
+            <li><a href="#">Calendar</a></li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li>
+              <a href="#"
+                ><span aria-hidden="true">🔍</span
+                ><span class="sr-only">Search</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Main Nav + Logo -->
+      <div class="main-header">
+        <div class="logo-heading-group">
+          <img class="logo" src="logo.svg" alt="City of Boulder logo" />
+          <div class="page-heading">
+            <div class="breadcrumb">Home</div>
+            <h1>Events</h1>
+          </div>
+        </div>
+
+        <nav class="main-nav" aria-label="Main Navigation">
+          <ul>
+            <li><a href="#">Locations</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Government</a></li>
+            <li><a href="#">News</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="container" id="main">
+      <nav class="filters" aria-label="Event Filters">
+        <form>
+          <fieldset>
+            <legend>Filter by Title</legend>
+            <label for="title" class="sr-only">Filter by title</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              placeholder="Filter by Title"
+            />
+          </fieldset>
+          <fieldset>
+            <legend>Department</legend>
+            <select name="department">
+              <option value="">- Select a Department -</option>
+              <option>Airport</option>
+              <option>City Attorney's Office</option>
+              <option>City Clerk</option>
+              <option>City Manager's Office</option>
+              <option>Climate Initiatives</option>
+              <option>Communication & Engagement</option>
+              <option>Community Vitality</option>
+              <option>Comprehensive Planning</option>
+              <option>Ecosystem Management</option>
+              <option>Facilities & Fleet</option>
+              <option>Finance</option>
+              <option>Fire - Rescue</option>
+              <option>Forestry Division</option>
+              <option>Historic Preservation</option>
+              <option>Housing & Human Services</option>
+              <option>Human Resources</option>
+              <option>Innovation & Technology</option>
+              <option>Municipal Court</option>
+              <option>Office of Arts and Culture</option>
+              <option>Office of Equity and Belonging</option>
+              <option>Office of the Independent Police Monitor</option>
+              <option>Older Adult Services</option>
+              <option>Open Space & Mountain Parks</option>
+              <option>Parks & Recreation</option>
+              <option>Planning & Development Services</option>
+              <option>Police</option>
+              <option>Regulatory Licensing</option>
+              <option>Transportation and Mobility</option>
+              <option>Utilities</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <legend>Category</legend>
+            <select name="category">
+              <option value="">- Any -</option>
+              <option>Advisory Boards</option>
+              <option>City Council</option>
+              <option>Community</option>
+              <option>Open Houses</option>
+              <option>Recreation</option>
+            </select>
+          </fieldset>
+
+          <fieldset>
+            <legend>Location Type</legend>
+            <label
+              ><input type="checkbox" name="location" value="virtual" />
+              Virtual</label
+            >
+            <label
+              ><input type="checkbox" name="location" value="city" /> Held at
+              city location</label
+            >
+            <label
+              ><input type="checkbox" name="location" value="other" /> Other
+              location</label
+            >
+          </fieldset>
+          <button type="submit">Apply</button>
+        </form>
+      </nav>
+      <section class="events">
+        <div class="event-grid">
+          <!-- START EVENT CARDS -->
+          <div class="event-card">
+            <div class="event-date">
+              <div>SAT</div>
+              <div>JUL 26</div>
+              <div>2025</div>
+            </div>
+            <div class="event-info">
+              <h3>You're A Good Man, Charlie Brown</h3>
+              <p>Glen Huntington Band Shell</p>
+            </div>
+          </div>
+          <div class="event-card">
+            <div class="event-date">
+              <div>MON</div>
+              <div>JUL 28</div>
+              <div>2025</div>
+            </div>
+            <div class="event-info">
+              <h3>Council Agenda Committee Meeting</h3>
+              <p>Virtual</p>
+            </div>
+          </div>
+          <div class="event-card">
+            <div class="event-date">
+              <div>MON</div>
+              <div>JUL 28</div>
+              <div>2025</div>
+            </div>
+            <div class="event-info">
+              <h3>Parks and Recreation Advisory Board Meeting</h3>
+              <p>Brenton Building</p>
+            </div>
+          </div>
+          <div class="event-card">
+            <div class="event-date">
+              <div>MON</div>
+              <div>JUL 28</div>
+              <div>2025</div>
+            </div>
+            <div class="event-info">
+              <h3>Concerts in the Parks</h3>
+              <p>East Palo Park</p>
+            </div>
+          </div>
+          <div class="event-card">
+            <div class="event-date">
+              <div>WED</div>
+              <div>JUL 30</div>
+              <div>2025</div>
+            </div>
+            <div class="event-info">
+              <h3>Special Hearing of the Beverage Licensing Authority</h3>
+              <p>Virtual</p>
+            </div>
+          </div>
+          <div class="event-card">
+            <div class="event-date">
+              <div>WED</div>
+              <div>JUL 30</div>
+              <div>2025</div>
+            </div>
+            <div class="event-info">
+              <h3>Boulder Valley Comprehensive Plan Update Office Hours</h3>
+              <p>Penfield Tate II Municipal Building</p>
+            </div>
+          </div>
+          <div class="event-card">
+            <div class="event-date">
+              <div>WED</div>
+              <div>JUL 30</div>
+              <div>2025</div>
+            </div>
+            <div class="event-info"><h3>Arts Commission Meeting</h3></div>
+          </div>
+          <div class="event-card">
+            <div class="event-date">
+              <div>THU</div>
+              <div>JUL 31</div>
+              <div>2025</div>
+            </div>
+            <div class="event-info">
+              <h3>City Council Study Session</h3>
+              <p>Virtual</p>
+            </div>
+          </div>
+          <div class="event-card">
+            <div class="event-date">
+              <div>THU</div>
+              <div>JUL 31</div>
+              <div>2025</div>
+            </div>
+            <div class="event-info">
+              <h3>Community Member-Hosted Conversations: Training Session</h3>
+              <p>Virtual</p>
+            </div>
+          </div>
+          <div class="event-card">
+            <div class="event-date">
+              <div>THU</div>
+              <div>JUL 31</div>
+              <div>2025</div>
+            </div>
+            <div class="event-info">
+              <h3>Experiments in Public Art Lecture Series</h3>
+              <p>Francesca Rodriguez Sawaya and Renata Gaul</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div>
+          <p><a href="#">Calendar</a></p>
+          <p><a href="#">Government</a></p>
+          <p><a href="#">News</a></p>
+        </div>
+        <div>
+          <p><a href="#">City Accessibility</a></p>
+          <p><a href="#">Locations</a></p>
+          <p><a href="#">Services</a></p>
+        </div>
+        <div>
+          <address>
+            1777 Broadway<br />
+            Boulder, CO 80302<br />
+            <a href="#">Contact</a>
+          </address>
+        </div>
+        <div class="social-icons">
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="X (formerly Twitter)">X</a>
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Nextdoor">🧭</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 <strong>City of Boulder</strong>. All Rights Reserved.
+          <a href="#">Privacy Policy</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
