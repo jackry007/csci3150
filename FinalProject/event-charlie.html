@@ -13,7 +13,11 @@
     <header class="site-header">
       <!-- Utility Bar -->
       <div class="utility-bar">
-        <nav class="utility-nav" aria-label="Utility Navigation">
+        <nav
+          class="utility-nav"
+          aria-label="Utility Navigation"
+          role="navigation"
+        >
           <ul>
             <li><a href="#">Calendar</a></li>
             <li><a href="#">Jobs</a></li>
@@ -28,30 +32,30 @@
         </nav>
       </div>
 
-      <!-- Main Nav + Logo + Page Heading -->
+      <!-- Main Header -->
       <div class="main-header">
         <div class="logo-heading-group">
           <img src="logo.svg" alt="City of Boulder logo" class="logo" />
           <div class="page-heading">
-            <div class="breadcrumb">Home > Events</div>
+            <div class="breadcrumb">Home &gt; Events</div>
             <h1>You're A Good Man, Charlie Brown</h1>
           </div>
         </div>
 
-        <nav class="main-nav" aria-label="Main Navigation">
+        <nav class="main-nav" aria-label="Main Navigation" role="navigation">
           <ul>
             <li><a href="#">Locations</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Projects</a></li>
             <li><a href="#">Government</a></li>
-            <li><a href="#">News</a></li>
+            <li><a href="#" aria-current="page">News</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <!-- MAIN CONTENT -->
-    <main id="main" class="container">
+    <!-- MAIN -->
+    <main id="main" class="container" role="main">
       <section>
         <img
           src="charlie-brown-promo.png"
@@ -59,7 +63,7 @@
           style="max-width: 100%; height: auto"
         />
         <aside>
-          <h2>Details</h2>
+          <h2>Event Details</h2>
           <ul>
             <li><strong>Date:</strong> Saturday, July 26, 2025</li>
             <li><strong>Time:</strong> 6:30 PM – 9:30 PM</li>
@@ -73,14 +77,17 @@
       <article>
         <h2>Theater Performance by the Arts Hub</h2>
 
-        <p>
-          <strong>Saturday, July 26 | 6:30–9:30 p.m.</strong> | Doors open at
-          6:30 p.m. | Show starts at 7:30 p.m.
-        </p>
+        <p><strong>Saturday, July 26 | 6:30–9:30 p.m.</strong></p>
+        <p>Doors open at 6:30 p.m. | Show starts at 7:30 p.m.</p>
 
-        <button type="button" aria-label="Add to Calendar">
-          Add to Calendar
-        </button>
+        <a
+          href="calendar.ics"
+          download
+          class="button"
+          role="button"
+          aria-label="Add this event to your calendar"
+          >Add to Calendar</a
+        >
 
         <p>
           <strong
@@ -111,9 +118,14 @@
           href="https://artshub.org/tickets"
           target="_blank"
           rel="noopener"
+          aria-label="Purchase tickets for Charlie Brown performance"
           >Purchase Tickets</a
         ><br />
-        <a href="https://artshub.org/players" target="_blank" rel="noopener"
+        <a
+          href="https://artshub.org/players"
+          target="_blank"
+          rel="noopener"
+          aria-label="Learn more about Arts Hub Players and upcoming shows"
           >Arts Hub Players and their upcoming productions</a
         >
       </article>
@@ -136,7 +148,7 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
       <div class="footer-top">
         <div>
           <p><a href="#">Calendar</a></p>
