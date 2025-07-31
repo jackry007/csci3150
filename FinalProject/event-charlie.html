@@ -4,90 +4,68 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>You're A Good Man, Charlie Brown – City of Boulder Events</title>
+    <link rel="stylesheet" href="common.css" />
     <link rel="stylesheet" href="charlesStyle.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- HEADER -->
-    <header class="site-header">
-      <!-- Utility Bar -->
-      <div class="utility-bar">
-        <nav
-          class="utility-nav"
-          aria-label="Utility Navigation"
-          role="navigation"
-        >
-          <ul>
-            <li><a href="#">Calendar</a></li>
-            <li><a href="#">Jobs</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li>
-              <a href="#"
-                ><span aria-hidden="true">🔍</span
-                ><span class="sr-only">Search</span></a
-              >
-            </li>
-          </ul>
-        </nav>
-      </div>
+    <!-- HEADER injected -->
+    <div id="header"></div>
 
-      <!-- Main Header -->
-      <div class="main-header">
-        <div class="logo-heading-group">
-          <img src="logo.svg" alt="City of Boulder logo" class="logo" />
-          <div class="page-heading">
-            <div class="breadcrumb">Home &gt; Events</div>
-            <h1>You're A Good Man, Charlie Brown</h1>
-          </div>
+    <main id="main" class="event-page container" role="main">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li aria-current="page">You're A Good Man, Charlie Brown</li>
+        </ol>
+      </nav>
+
+      <h1 class="event-title">You're A Good Man, Charlie Brown</h1>
+
+      <!-- Hero Section -->
+      <section class="event-hero">
+        <div class="hero-image">
+          <img
+            src="charlie-brown-promo.png"
+            alt="Promotional banner for 'You're A Good Man, Charlie Brown' July 25–27th by Arts Hub"
+          />
         </div>
-
-        <nav class="main-nav" aria-label="Main Navigation" role="navigation">
-          <ul>
-            <li><a href="#">Locations</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Government</a></li>
-            <li><a href="#" aria-current="page">News</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <!-- MAIN -->
-    <main id="main" class="container" role="main">
-      <section>
-        <img
-          src="charlie-brown-promo.png"
-          alt="Promotional banner for 'You're A Good Man, Charlie Brown' July 25–27th by Arts Hub"
-          style="max-width: 100%; height: auto"
-        />
-        <aside>
+        <aside class="event-details">
           <h2>Event Details</h2>
           <ul>
             <li><strong>Date:</strong> Saturday, July 26, 2025</li>
             <li><strong>Time:</strong> 6:30 PM – 9:30 PM</li>
             <li>
-              <strong>Location:</strong> 1212 Canyon Blvd, Boulder, CO 80302
+              <strong>Location:</strong>
+              <a
+                href="https://maps.google.com/?q=1212+Canyon+Blvd+Boulder+CO+80302"
+                target="_blank"
+                rel="noopener"
+                aria-label="View location on Google Maps: 1212 Canyon Blvd, Boulder, CO 80302"
+              >
+                1212 Canyon Blvd, Boulder, CO 80302
+              </a>
             </li>
           </ul>
+          <a
+            href="calendar.ics"
+            download
+            class="button add-calendar"
+            aria-label="Add You're A Good Man, Charlie Brown to your calendar"
+          >
+            Add to Calendar
+          </a>
         </aside>
       </section>
 
-      <article>
+      <!-- Main Event Article -->
+      <article class="event-content">
         <h2>Theater Performance by the Arts Hub</h2>
-
         <p><strong>Saturday, July 26 | 6:30–9:30 p.m.</strong></p>
         <p>Doors open at 6:30 p.m. | Show starts at 7:30 p.m.</p>
-
-        <a
-          href="calendar.ics"
-          download
-          class="button"
-          role="button"
-          aria-label="Add this event to your calendar"
-          >Add to Calendar</a
-        >
 
         <p>
           <strong
@@ -95,7 +73,6 @@
             online</strong
           >
         </p>
-
         <p>
           Join the Arts Hub Players for a delightful outdoor performance of the
           Tony Award-winning musical, "You're A Good Man, Charlie Brown," at the
@@ -103,85 +80,64 @@
         </p>
         <p>
           This family-friendly production brings Charles Schulz’s classic
-          characters to life—Charlie Brown, Lucy, Linus, Schroeder, Sally, and
-          Snoopy—as they navigate the joys and challenges of childhood through
-          song and dance.
-        </p>
-        <p>
-          The event is part of Boulder’s “Arts in the Park” series, featuring
-          live performances in a scenic outdoor setting. Bring your family, pack
-          a picnic, and enjoy an evening of musical theater under the stars.
+          characters to life through song and dance.
         </p>
 
         <a
-          class="button"
+          class="button primary"
           href="https://artshub.org/tickets"
           target="_blank"
           rel="noopener"
-          aria-label="Purchase tickets for Charlie Brown performance"
-          >Purchase Tickets</a
-        ><br />
-        <a
-          href="https://artshub.org/players"
-          target="_blank"
-          rel="noopener"
-          aria-label="Learn more about Arts Hub Players and upcoming shows"
-          >Arts Hub Players and their upcoming productions</a
+          aria-label="Purchase tickets for You're A Good Man, Charlie Brown"
         >
+          Purchase Tickets
+        </a>
+
+        <p>
+          <a
+            href="https://artshub.org/players"
+            target="_blank"
+            rel="noopener"
+            aria-label="Learn more about Arts Hub Players and upcoming shows"
+          >
+            Learn more about Arts Hub Players and upcoming shows
+          </a>
+        </p>
       </article>
 
       <hr />
 
-      <section>
-        <h2>More Events</h2>
-        <ul>
-          <li>
-            <strong>Sat, Aug 2</strong> – Boulder Opera at Glen Huntington Band
-            Shell
-          </li>
-          <li>
-            <strong>Sun, Aug 3</strong> – Boulder Opera at Glen Huntington Band
-            Shell
-          </li>
-        </ul>
+      <!-- More Events Section -->
+      <section
+        class="related-events"
+        aria-label="More events in the Arts in the Park series"
+      >
+        <h2>More Events in the Series</h2>
+        <div class="related-event-cards">
+          <article class="mini-card music" aria-labelledby="related1-title">
+            <div class="date-block"><span>Sat</span><span>Aug 2</span></div>
+            <div class="info-block">
+              <h3 id="related1-title">Boulder Opera</h3>
+              <p class="event-type">🎵 Music Performance</p>
+              <p class="event-location">Glen Huntington Band Shell</p>
+            </div>
+          </article>
+
+          <article class="mini-card music" aria-labelledby="related2-title">
+            <div class="date-block"><span>Sun</span><span>Aug 3</span></div>
+            <div class="info-block">
+              <h3 id="related2-title">Boulder Opera</h3>
+              <p class="event-type">🎵 Music Performance</p>
+              <p class="event-location">Glen Huntington Band Shell</p>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="site-footer" role="contentinfo">
-      <div class="footer-top">
-        <div>
-          <p><a href="#">Calendar</a></p>
-          <p><a href="#">Government</a></p>
-          <p><a href="#">News</a></p>
-        </div>
-        <div>
-          <p><a href="#">City Accessibility</a></p>
-          <p><a href="#">Locations</a></p>
-          <p><a href="#">Services</a></p>
-        </div>
-        <div>
-          <address>
-            1777 Broadway<br />
-            Boulder, CO 80302<br />
-            <a href="#">Contact</a>
-          </address>
-        </div>
-        <div class="social-icons">
-          <a href="#" aria-label="YouTube">▶</a>
-          <a href="#" aria-label="X (formerly Twitter)">X</a>
-          <a href="#" aria-label="Facebook">f</a>
-          <a href="#" aria-label="Instagram">📷</a>
-          <a href="#" aria-label="LinkedIn">in</a>
-          <a href="#" aria-label="Nextdoor">🧭</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>
-          &copy; 2025 <strong>City of Boulder</strong>. All Rights Reserved.
-          <a href="#">Privacy Policy</a>
-        </p>
-      </div>
-    </footer>
+    <!-- FOOTER injected -->
+    <div id="footer"></div>
+
+    <script src="headerFooter.js"></script>
   </body>
 </html>

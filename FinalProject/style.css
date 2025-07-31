@@ -1,271 +1,376 @@
-/* Base styles */
+/* style.css – Modern Boulder Events Page */
+
+/* ---------------------- */
+/* Base Layout */
+/* ---------------------- */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
   background-color: #f4f9fb;
   color: #000;
-}
-
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: #000;
-  color: #fff;
-  padding: 8px;
-  z-index: 100;
-}
-.skip-link:focus {
-  top: 0;
-}
-
-/* Header */
-/* Header layout */
-.site-header {
-  background-color: #e6f0f5;
-  border-bottom: 1px solid #ccc;
-  font-family: Arial, sans-serif;
-}
-
-/* Top utility nav */
-.utility-bar {
-  padding: 0.5rem 2rem;
-  font-size: 0.85rem;
-  border-bottom: 1px solid #ccc;
-  margin-bottom: 0; /* ensures no extra spacing below */
-}
-
-.utility-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: flex-end;
-  gap: 1.5rem;
   margin: 0;
-  padding: 0;
-  margin-top: 0; /* removes any top margin */
-  padding-top: 0.5rem; /* optional: reduce vertical space if needed */
 }
 
-.utility-nav a {
-  text-decoration: none;
-  color: #000;
-}
-
-/* Main nav with logo */
-.main-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.logo-heading-group {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.logo {
-  height: 70px;
-}
-
-.main-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
-
-.main-nav a {
-  text-decoration: none;
-  color: #000;
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-/* Layout */
+/* Container for filters and event list */
 .container {
   display: flex;
   gap: 2rem;
   padding: 2rem;
-  border-left: 2px solid #000;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Filters */
+/* ---------------------- */
+/* Filters Sidebar        */
+/* ---------------------- */
 .filters {
   width: 260px;
-  background: white;
+  background: #ffffff;
   padding: 1.5rem;
-  border: none;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
+
 .filters fieldset {
   border: none;
   margin-bottom: 1.5rem;
 }
+
 .filters legend {
   font-weight: bold;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
   font-size: 0.75rem;
+  letter-spacing: 0.5px;
   border-bottom: 1px solid #ccc;
   padding-bottom: 0.25rem;
+  color: #333;
 }
+
 .filters label,
 .filters select,
 .filters input[type="text"] {
   display: block;
   margin-bottom: 0.5rem;
   width: 100%;
+  font-size: 0.9rem;
 }
+
+/* Inputs and dropdowns */
+.filters input[type="text"],
+.filters select {
+  padding: 0.4rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.filters input[type="text"]:focus,
+.filters select:focus {
+  border-color: #2c7a7b;
+  box-shadow: 0 0 0 2px rgba(44, 122, 123, 0.2);
+  outline: none;
+}
+
+/* Checkboxes */
 .filters input[type="checkbox"] {
   margin-right: 0.5rem;
 }
+
+.filters label {
+  cursor: pointer;
+}
+
+/* Apply Button */
 .filters button {
-  background-color: #7a3e36;
+  background-color: #2c7a7b;
   color: white;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.2rem;
   cursor: pointer;
   font-size: 0.9rem;
   letter-spacing: 1px;
   text-transform: uppercase;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
-/* Events */
+.filters button:hover {
+  background-color: #215a5c;
+  transform: translateY(-2px);
+}
+
+/* ---------------------- */
+/* Events Grid & Cards    */
+/* ---------------------- */
 .events {
   flex: 1;
 }
+
 .event-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
 }
+
 .event-card {
   display: flex;
-  background-color: #e0edf4;
-  border: 1px solid #ccc;
-  transition: background-color 0.3s ease;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Event date block */
 .event-date {
-  background-color: #fff;
   text-align: center;
   padding: 1rem 0.75rem;
-  border-right: 1px solid #ccc;
-  min-width: 70px;
+  color: #fff;
+  min-width: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-size: 0.75rem;
+  font-weight: bold;
   text-transform: uppercase;
-  color: #333;
+  line-height: 1.2;
+  border-radius: 12px 0 0 12px;
 }
-.event-date span {
-  margin: 2px 0;
-}
+
+/* Event info section */
 .event-info {
   flex: 1;
   padding: 1rem;
-  background-color: #e0edf4;
-  transition: background-color 0.3s ease;
-}
-.event-card:hover .event-info {
-  background-color: #b7d1e0;
-}
-.event-info h3 {
-  font-size: 1rem;
-  margin: 0 0 0.5rem;
-}
-.event-info div {
-  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* Pagination */
+.event-info h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 0.3rem;
+  color: #222;
+  transition: color 0.2s ease;
+}
+
+.event-card:hover .event-info h3 {
+  color: #215a5c;
+}
+
+/* Event type with icon */
+.event-type {
+  font-size: 0.85rem;
+  margin: 0 0 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 500;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.event-type .icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Event location */
+.event-location {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* ---------------------- */
+/* Color-Coded Event Types */
+/* ---------------------- */
+
+/* Theater / Arts / Performances */
+.event-type.theater {
+  color: #8e44ad;
+}
+.event-card.theater .event-date {
+  background: linear-gradient(135deg, #8e44ad, #a569bd);
+}
+
+/* Music / Concerts */
+.event-type.music {
+  color: #e67e22;
+}
+.event-card.music .event-date {
+  background: linear-gradient(135deg, #e67e22, #f39c12);
+}
+
+/* Government / City Council / Public Hearings */
+.event-type.government {
+  color: #2c7a7b;
+}
+.event-card.government .event-date {
+  background: linear-gradient(135deg, #2c7a7b, #3aa6a7);
+}
+
+/* Community Events / Workshops */
+.event-type.community {
+  color: #27ae60;
+}
+.event-card.community .event-date {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+}
+
+/* Education / Lectures / Training */
+.event-type.education {
+  color: #c0392b;
+}
+.event-card.education .event-date {
+  background: linear-gradient(135deg, #c0392b, #e74c3c);
+}
+
+/* ---------------------- */
+/* Pagination             */
+/* ---------------------- */
 .pagination {
   display: flex;
   gap: 0.5rem;
   margin-top: 2rem;
   justify-content: center;
 }
+
 .pagination a {
   text-decoration: none;
-  color: #000;
+  color: #2c7a7b;
   padding: 0.5rem 0.75rem;
-  border: 1px solid #ccc;
+  border: 1px solid #2c7a7b;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.2s;
 }
-.pagination a.active {
-  background: #000;
+
+.pagination a:hover {
+  background: #2c7a7b;
   color: #fff;
 }
 
-/* Footer */
-.site-footer {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-.footer-top {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 3rem;
-  margin-bottom: 1rem;
+.pagination a.active {
+  background: #2c7a7b;
+  color: #fff;
 }
 
-.footer-bottom {
-  font-size: 0.9rem;
-}
-.footer-top > div {
-  flex: 1;
-  padding: 1rem;
+/* Events layout - responsive */
+@media (max-width: 1024px) {
+  .l-two-col-5-17 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .l-two-col-5-17__side-primary {
+    order: -1;
+    margin-bottom: 1rem;
+  }
 }
 
-.footer-bottom p {
-  margin: 0;
-}
-.social-icons a {
-  margin: 0 0.5rem;
-  text-decoration: none;
-  font-size: 1.5rem;
+@media (max-width: 600px) {
+  .event-card {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .event-card__content h3 {
+    font-size: 1rem;
+  }
+
+  .event-card__date {
+    font-size: 0.8rem;
+  }
 }
 
-.page-header {
-  background-color: #e6f0f5;
-  padding: 2rem 2rem 1rem;
+/* ========================= */
+/* MOBILE-FIRST ENHANCEMENTS */
+/* ========================= */
+@media (max-width: 768px) {
+  /* Stack filters above events */
+  .container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .filters {
+    width: 100%;
+    position: static;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+  }
+
+  .filters input[type="text"],
+  .filters select {
+    font-size: 1rem;
+    padding: 0.6rem;
+  }
+
+  .filters button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+
+  /* Event grid becomes single column */
+  .event-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .event-card {
+    flex-direction: row;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .event-date {
+    min-width: 70px;
+    font-size: 0.7rem;
+    padding: 0.8rem 0.5rem;
+  }
+
+  .event-info {
+    padding: 0.75rem;
+  }
+
+  .event-info h3 {
+    font-size: 1rem;
+  }
+
+  .event-type,
+  .event-location {
+    font-size: 0.8rem;
+  }
 }
 
-.page-heading .breadcrumb {
-  font-size: 0.9rem;
-  color: #555;
-  margin-bottom: 0.25rem;
-}
+@media (max-width: 480px) {
+  .filters {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
 
-.page-heading h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin: 0;
-}
+  .filters legend {
+    font-size: 0.7rem;
+  }
 
-/* Focus indicators for accessibility */
-a:focus,
-button:focus,
-input:focus,
-select:focus,
-textarea:focus {
-  outline: 3px solid #005fcc; /* Strong blue outline */
-  outline-offset: 2px;
-  border-radius: 4px;
-}
+  .event-info h3 {
+    font-size: 0.95rem;
+  }
 
-/* Optional: Add hover styles too for consistency */
-a:hover,
-button:hover {
-  outline: none;
-  text-decoration: underline;
+  .event-date {
+    font-size: 0.65rem;
+  }
 }
-

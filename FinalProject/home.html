@@ -4,59 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>City of Boulder Events</title>
+    <link rel="stylesheet" href="common.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- HEADER -->
-    <header class="site-header">
-      <!-- Utility Bar -->
-      <div class="utility-bar">
-        <nav class="utility-nav" aria-label="Utility Navigation">
-          <ul>
-            <li><a href="#">Calendar</a></li>
-            <li><a href="#">Jobs</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li>
-              <a href="#"
-                ><span aria-hidden="true">🔍</span
-                ><span class="sr-only">Search</span></a
-              >
-            </li>
-          </ul>
-        </nav>
-      </div>
-
-      <!-- Main Nav + Logo -->
-      <div class="main-header">
-        <div class="logo-heading-group">
-          <img class="logo" src="logo.svg" alt="City of Boulder logo" />
-          <div class="page-heading">
-            <div class="breadcrumb">Home</div>
-            <h1>Events</h1>
-          </div>
-        </div>
-
-        <nav class="main-nav" aria-label="Main Navigation">
-          <ul>
-            <li><a href="#">Locations</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Government</a></li>
-            <li><a href="#">News</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <!-- HEADER will be injected here -->
+    <div id="header"></div>
 
     <!-- MAIN -->
-    <main class="container" id="main">
+    <main class="container" id="main" role="main">
+      <!-- Filters Sidebar -->
       <nav class="filters" aria-label="Event Filters">
         <form>
           <fieldset>
             <legend>Filter by Title</legend>
-            <label for="title" class="sr-only">Filter by title</label>
+            <label for="title" class="sr-only">Enter event title</label>
             <input
               type="text"
               id="title"
@@ -64,9 +28,11 @@
               placeholder="Filter by Title"
             />
           </fieldset>
+
           <fieldset>
             <legend>Department</legend>
-            <select name="department">
+            <label for="department" class="sr-only">Select department</label>
+            <select name="department" id="department">
               <option value="">- Select a Department -</option>
               <option>Airport</option>
               <option>City Attorney's Office</option>
@@ -99,9 +65,11 @@
               <option>Utilities</option>
             </select>
           </fieldset>
+
           <fieldset>
             <legend>Category</legend>
-            <select name="category">
+            <label for="category" class="sr-only">Select category</label>
+            <select name="category" id="category">
               <option value="">- Any -</option>
               <option>Advisory Boards</option>
               <option>City Council</option>
@@ -113,171 +81,230 @@
 
           <fieldset>
             <legend>Location Type</legend>
-            <label
-              ><input type="checkbox" name="location" value="virtual" />
-              Virtual</label
-            >
-            <label
-              ><input type="checkbox" name="location" value="city" /> Held at
-              city location</label
-            >
-            <label
-              ><input type="checkbox" name="location" value="other" /> Other
-              location</label
-            >
+            <label>
+              <input type="checkbox" name="location" value="virtual" />
+              Virtual
+            </label>
+            <label>
+              <input type="checkbox" name="location" value="city" />
+              Held at city location
+            </label>
+            <label>
+              <input type="checkbox" name="location" value="other" />
+              Other location
+            </label>
           </fieldset>
-          <button type="submit">Apply</button>
+
+          <button type="submit">Apply Filters</button>
         </form>
       </nav>
-      <section class="events">
+
+      <!-- Event Listings -->
+      <section class="events" aria-label="Upcoming Events">
         <div class="event-grid">
-          <!-- START EVENT CARDS -->
-          <div class="event-card">
-            <div class="event-date">
+          <!-- 1: Theater -->
+          <article class="event-card theater" aria-labelledby="event1-title">
+            <div class="event-date" aria-label="Saturday, July 26, 2025">
               <div>SAT</div>
               <div>JUL 26</div>
               <div>2025</div>
             </div>
             <div class="event-info">
-              <h3>You're A Good Man, Charlie Brown</h3>
-              <p>Glen Huntington Band Shell</p>
+              <h3 id="event1-title">
+                <a href="event-charlie.html"
+                  >You're A Good Man, Charlie Brown</a
+                >
+              </h3>
+              <p class="event-type theater">
+                <span class="icon" aria-hidden="true">🎭</span>
+                Theater Performance
+              </p>
+              <p class="event-location">Glen Huntington Band Shell</p>
             </div>
-          </div>
-          <div class="event-card">
-            <div class="event-date">
+          </article>
+
+          <!-- 2: Government -->
+          <article class="event-card government" aria-labelledby="event2-title">
+            <div class="event-date" aria-label="Monday, July 28, 2025">
               <div>MON</div>
               <div>JUL 28</div>
               <div>2025</div>
             </div>
             <div class="event-info">
-              <h3>Council Agenda Committee Meeting</h3>
-              <p>Virtual</p>
+              <h3 id="event2-title">Council Agenda Committee Meeting</h3>
+              <p class="event-type government">
+                <span class="icon" aria-hidden="true">🏛</span>
+                City Council Meeting
+              </p>
+              <p class="event-location">Virtual</p>
             </div>
-          </div>
-          <div class="event-card">
-            <div class="event-date">
+          </article>
+
+          <!-- 3: Government -->
+          <article class="event-card government" aria-labelledby="event3-title">
+            <div class="event-date" aria-label="Monday, July 28, 2025">
               <div>MON</div>
               <div>JUL 28</div>
               <div>2025</div>
             </div>
             <div class="event-info">
-              <h3>Parks and Recreation Advisory Board Meeting</h3>
-              <p>Brenton Building</p>
+              <h3 id="event3-title">
+                Parks and Recreation Advisory Board Meeting
+              </h3>
+              <p class="event-type government">
+                <span class="icon" aria-hidden="true">🏛</span>
+                Advisory Board
+              </p>
+              <p class="event-location">Brenton Building</p>
             </div>
-          </div>
-          <div class="event-card">
-            <div class="event-date">
+          </article>
+
+          <!-- 4: Music -->
+          <article class="event-card music" aria-labelledby="event4-title">
+            <div class="event-date" aria-label="Monday, July 28, 2025">
               <div>MON</div>
               <div>JUL 28</div>
               <div>2025</div>
             </div>
             <div class="event-info">
-              <h3>Concerts in the Parks</h3>
-              <p>East Palo Park</p>
+              <h3 id="event4-title">Concerts in the Parks</h3>
+              <p class="event-type music">
+                <span class="icon" aria-hidden="true">🎵</span>
+                Music & Community
+              </p>
+              <p class="event-location">East Palo Park</p>
             </div>
-          </div>
-          <div class="event-card">
-            <div class="event-date">
+          </article>
+
+          <!-- 5: Government -->
+          <article class="event-card government" aria-labelledby="event5-title">
+            <div class="event-date" aria-label="Wednesday, July 30, 2025">
               <div>WED</div>
               <div>JUL 30</div>
               <div>2025</div>
             </div>
             <div class="event-info">
-              <h3>Special Hearing of the Beverage Licensing Authority</h3>
-              <p>Virtual</p>
+              <h3 id="event5-title">
+                Special Hearing of the Beverage Licensing Authority
+              </h3>
+              <p class="event-type government">
+                <span class="icon" aria-hidden="true">🏛</span>
+                Public Hearing
+              </p>
+              <p class="event-location">Virtual</p>
             </div>
-          </div>
-          <div class="event-card">
-            <div class="event-date">
+          </article>
+
+          <!-- 6: Government -->
+          <article class="event-card government" aria-labelledby="event6-title">
+            <div class="event-date" aria-label="Wednesday, July 30, 2025">
               <div>WED</div>
               <div>JUL 30</div>
               <div>2025</div>
             </div>
             <div class="event-info">
-              <h3>Boulder Valley Comprehensive Plan Update Office Hours</h3>
-              <p>Penfield Tate II Municipal Building</p>
+              <h3 id="event6-title">
+                Boulder Valley Comprehensive Plan Update Office Hours
+              </h3>
+              <p class="event-type government">
+                <span class="icon" aria-hidden="true">🏛</span>
+                Planning & Development
+              </p>
+              <p class="event-location">Penfield Tate II Municipal Building</p>
             </div>
-          </div>
-          <div class="event-card">
-            <div class="event-date">
+          </article>
+
+          <!-- 7: Theater / Arts -->
+          <article class="event-card theater" aria-labelledby="event7-title">
+            <div class="event-date" aria-label="Wednesday, July 30, 2025">
               <div>WED</div>
               <div>JUL 30</div>
               <div>2025</div>
             </div>
-            <div class="event-info"><h3>Arts Commission Meeting</h3></div>
-          </div>
-          <div class="event-card">
-            <div class="event-date">
+            <div class="event-info">
+              <h3 id="event7-title">Arts Commission Meeting</h3>
+              <p class="event-type theater">
+                <span class="icon" aria-hidden="true">🎨</span>
+                Arts Commission
+              </p>
+              <p class="event-location">City Office</p>
+            </div>
+          </article>
+
+          <!-- 8: Government -->
+          <article class="event-card government" aria-labelledby="event8-title">
+            <div class="event-date" aria-label="Thursday, July 31, 2025">
               <div>THU</div>
               <div>JUL 31</div>
               <div>2025</div>
             </div>
             <div class="event-info">
-              <h3>City Council Study Session</h3>
-              <p>Virtual</p>
+              <h3 id="event8-title">City Council Study Session</h3>
+              <p class="event-type government">
+                <span class="icon" aria-hidden="true">🏛</span>
+                Study Session
+              </p>
+              <p class="event-location">Virtual</p>
             </div>
-          </div>
-          <div class="event-card">
-            <div class="event-date">
+          </article>
+
+          <!-- 9: Community -->
+          <article class="event-card community" aria-labelledby="event9-title">
+            <div class="event-date" aria-label="Thursday, July 31, 2025">
               <div>THU</div>
               <div>JUL 31</div>
               <div>2025</div>
             </div>
             <div class="event-info">
-              <h3>Community Member-Hosted Conversations: Training Session</h3>
-              <p>Virtual</p>
+              <h3 id="event9-title">
+                Community Member-Hosted Conversations: Training Session
+              </h3>
+              <p class="event-type community">
+                <span class="icon" aria-hidden="true">💬</span>
+                Training / Workshop
+              </p>
+              <p class="event-location">Virtual</p>
             </div>
-          </div>
-          <div class="event-card">
-            <div class="event-date">
+          </article>
+
+          <!-- 10: Education / Lecture -->
+          <article class="event-card education" aria-labelledby="event10-title">
+            <div class="event-date" aria-label="Thursday, July 31, 2025">
               <div>THU</div>
               <div>JUL 31</div>
               <div>2025</div>
             </div>
             <div class="event-info">
-              <h3>Experiments in Public Art Lecture Series</h3>
-              <p>Francesca Rodriguez Sawaya and Renata Gaul</p>
+              <h3 id="event10-title">
+                Experiments in Public Art Lecture Series
+              </h3>
+              <p class="event-type education">
+                <span class="icon" aria-hidden="true">🎓</span>
+                Lecture Series
+              </p>
+              <p class="event-location">
+                Francesca Rodriguez Sawaya and Renata Gaul
+              </p>
             </div>
-          </div>
+          </article>
         </div>
+
+        <!-- Pagination -->
+        <nav class="pagination" aria-label="Event Pages">
+          <a href="#" class="active" aria-current="page">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <span aria-hidden="true">…</span>
+          <a href="#" aria-label="Next page">&gt;</a>
+          <a href="#" aria-label="Last page">&raquo;</a>
+        </nav>
       </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="footer-top">
-        <div>
-          <p><a href="#">Calendar</a></p>
-          <p><a href="#">Government</a></p>
-          <p><a href="#">News</a></p>
-        </div>
-        <div>
-          <p><a href="#">City Accessibility</a></p>
-          <p><a href="#">Locations</a></p>
-          <p><a href="#">Services</a></p>
-        </div>
-        <div>
-          <address>
-            1777 Broadway<br />
-            Boulder, CO 80302<br />
-            <a href="#">Contact</a>
-          </address>
-        </div>
-        <div class="social-icons">
-          <a href="#" aria-label="YouTube">▶</a>
-          <a href="#" aria-label="X (formerly Twitter)">X</a>
-          <a href="#" aria-label="Facebook">f</a>
-          <a href="#" aria-label="Instagram">📷</a>
-          <a href="#" aria-label="LinkedIn">in</a>
-          <a href="#" aria-label="Nextdoor">🧭</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>
-          &copy; 2025 <strong>City of Boulder</strong>. All Rights Reserved.
-          <a href="#">Privacy Policy</a>
-        </p>
-      </div>
-    </footer>
+    <!-- FOOTER will be injected here -->
+    <div id="footer"></div>
+    <script src="headerFooter.js"></script>
   </body>
 </html>

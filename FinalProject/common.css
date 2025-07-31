@@ -1,0 +1,309 @@
+/* ===============================
+   common.css – Unified Header & Footer
+   For City of Boulder Events
+=============================== */
+
+/* ----- BASE & GLOBAL ----- */
+body {
+  font-family: "Inter", Arial, sans-serif;
+  margin: 0;
+  color: #000;
+  background-color: #f4f9fb;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: #2c7a7b;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Accessibility focus indicators */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid #005fcc;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ========================= */
+/* HEADER                     */
+/* ========================= */
+
+.site-header {
+  background-color: #e6f0f5;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.2rem 2rem;
+  gap: 1rem;
+}
+
+/* Logo + Page Heading */
+.logo-heading-group {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo {
+  height: 65px;
+}
+
+.page-heading .breadcrumb {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 0.2rem;
+}
+
+.page-heading h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+  color: #222;
+}
+
+/* Navigation Groups */
+.nav-groups {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
+}
+
+/* Utility Navigation */
+.utility-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+.utility-nav a {
+  color: #555;
+  transition: color 0.2s;
+}
+
+.utility-nav a:hover {
+  color: #2c7a7b;
+}
+
+/* Main Navigation */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  color: #222;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #2c7a7b;
+  transition: width 0.3s;
+}
+
+.main-nav a:hover {
+  color: #2c7a7b;
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+/* ========================= */
+/* FOOTER                     */
+/* ========================= */
+.site-footer {
+  background-color: #e6f0f5;
+  padding: 3rem 2rem;
+  font-size: 0.95rem;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 2rem auto;
+  text-align: left;
+}
+
+.footer-top h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.footer-top > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.footer-top a {
+  color: #000;
+  transition: color 0.2s;
+}
+
+.footer-top a:hover {
+  color: #2c7a7b;
+}
+
+.footer-top address {
+  font-style: normal;
+  line-height: 1.6;
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  color: #000;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.social-icons a:hover {
+  color: #2c7a7b;
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  text-align: center;
+  color: #555;
+  font-size: 0.85rem;
+  border-top: 1px solid #ddd;
+  padding-top: 1.5rem;
+}
+
+.footer-bottom a {
+  color: #000;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.footer-bottom a:hover {
+  color: #2c7a7b;
+}
+
+/* ========================= */
+/* MOBILE MENU                */
+/* ========================= */
+
+/* Hamburger button */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #222;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Hide menus initially on mobile */
+  .utility-nav ul,
+  .main-nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+    background: #e6f0f5;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    margin-top: 0.3rem;
+  }
+
+  /* Show when nav-open is added */
+  .nav-open .utility-nav ul,
+  .nav-open .main-nav ul {
+    display: flex;
+  }
+
+  .main-nav a::after {
+    display: none;
+  }
+}
+
+/* Responsive Footer */
+@media (max-width: 1024px) {
+  .footer-top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-top > div {
+    align-items: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
